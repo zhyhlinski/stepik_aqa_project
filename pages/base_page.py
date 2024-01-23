@@ -18,13 +18,6 @@ class BasePage:
             return False
         return True
 
-    def get_element(self, how, what):
-        try:
-            element = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((how, what)))
-        except NoSuchElementException:
-            return False
-        return element
-
     def is_disappeared(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout, 1,
@@ -40,9 +33,20 @@ class BasePage:
             return True
         return False
 
+    def get_element(self, how, what):
+        try:
+            element = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((how, what)))
+        except NoSuchElementException:
+            return False
+        return element
+
     def go_to_login_page(self):
         login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         login_link.click()
+
+    def go_to_basket(self):
+        basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        basket_link.click()
 
     def open(self):
         self.browser.get(self.url)

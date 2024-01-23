@@ -26,6 +26,9 @@ class ProductPage(BasePage):
     def price_check_in_alert_message(self):
         assert self.get_item_price() == self.get_price_from_alert(), "Price check failed"
 
+    def should_be_product_page(self):
+        assert self.is_element_present(*ProductPageLocators.PRODUCT_PAGE_LOCATOR), "No product page locator"
+
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.ITEM_NAME_ADDED_TO_BASKET_ALERT), \
            "Success message is presented, but should not be"
