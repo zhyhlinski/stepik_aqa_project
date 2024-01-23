@@ -29,10 +29,10 @@ class ProductPage(BasePage):
     def should_be_product_page(self):
         assert self.is_element_present(*ProductPageLocators.PRODUCT_PAGE_LOCATOR), "No product page locator"
 
-    def should_not_be_success_message(self):
-        assert self.is_not_element_present(*ProductPageLocators.ITEM_NAME_ADDED_TO_BASKET_ALERT), \
-           "Success message is presented, but should not be"
-
     def should_disappear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.ITEM_NAME_ADDED_TO_BASKET_ALERT), \
            "Success message isn't disappeared"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ITEM_NAME_ADDED_TO_BASKET_ALERT), \
+           "Success message is presented, but should not be"

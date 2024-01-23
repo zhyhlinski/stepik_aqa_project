@@ -7,10 +7,12 @@ class BasePageLocators:
     BASKET_LINK = (By.CSS_SELECTOR, "div.basket-mini span a.btn")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
+
 class BasketLocators:
     EMPTY_BASKET = (By.CSS_SELECTOR, "#content_inner>p")
     NOT_EMPTY_BASKET = (By.CSS_SELECTOR, "#basket_formset")
     BASKET_HEADER = (By.CSS_SELECTOR, "div.page-header.action h1")
+
 
 class LoginPageLocators:
     LOGIN_FORM = (By.ID, "login_form")
@@ -19,6 +21,7 @@ class LoginPageLocators:
     REGISTER_PASSWORD = (By.ID, "id_registration-password1")
     REGISTER_PASSWORD2 = (By.ID, "id_registration-password2")
     SUBMIT_REGISTRATION_BUTTON = (By.CSS_SELECTOR, "#register_form > button")
+
 
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
